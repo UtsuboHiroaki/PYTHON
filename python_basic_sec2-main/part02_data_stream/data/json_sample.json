@@ -1,0 +1,35 @@
+{
+  "9": {
+    "title": "ITセンスがよくなるエクセル講座",
+    "get_absolute_url": "/lesson/course/9/",
+    "download_file": null,
+    "privileges": {
+      "privilege": true,
+      "permission": true,
+      "group": false,
+      "subscription": false
+    }
+  },
+  "10": {
+    "title": "エクセルマクロ・VBA導入編",
+    "get_absolute_url": "/lesson/course/10/",
+    "download_file": null,
+    "privileges": {
+      "privilege": true,
+      "permission": true,
+      "group": false,
+      "subscription": true
+    }
+  },
+  "35": {
+    "title": "エクセル仕事を劇的に楽にする「DPRフレームワーク」",
+    "get_absolute_url": "/lesson/course/35/",
+    "download_file": null,
+    "privileges": {
+      "privilege": false,
+      "permission": false,
+      "group": false,
+      "subscription": false
+    }
+  }
+}

@@ -1,0 +1,2 @@
+moji = "hoge"
+result = moji()
