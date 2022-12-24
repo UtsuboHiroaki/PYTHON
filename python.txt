@@ -1,0 +1,775 @@
+
+Powershell移動
+C:\Users\hutsu> cd C:\mypython\monthly_report\
+一つ上のフォルダに行く
+cd ..
+beautifulsoup4
+
+ `git init` | 空のリポジトリを作ります。 | `git init` |
+ `git status` | 現在の working tree の状態を確認します。 | `git status` |
+
+`git checkout` というコマンドで、ワーキングツリーを、特定のコミットがされたときの状態に戻すことができます。
+引数には、ブランチ名またはハッシュ値を使います。  
+ブランチ名を使った場合は、そのブランチの最新のコミットのときの状態になります。  
+```shell
+git checkout master
+```
+
+ローカルリポジトリとリモートリポジトリとを関連づけます
+ `git remote add origin https://github.com/<username>/<repository_name.git>`
+ `git push -u origin <branch_name>` | ローカルのブランチと同じものをリモートで利用可能にします。 | `git push -u origin <branch_name>` |
+
+git checkout -b` | 新しいブランチを作り、チェックアウトします | `git checkout -b new_branch` |
+git branch --list` | ブランチのリストを出力します。 | `git branch --list` |
+git branch -d` | ブランチを削除します。 | `git branch -d new_branch` |
+git merge ` | 現在のブランチに、指定されたブランチの内容を統合(マージ)します。 | `git merge new_branch`
+
+`git branch --list -r` | リモートブランチのリストを出力します。 | `git branch --list -r` |
+`git push` | リモートリポジトリを更新します。 | `git push` |
+ `git fetch` | リモートリポジトリからブランチ等の状態を取得し、リモート追跡ブランチを更新します。 | `git fetch` |
+ `git pull` | `git fetch` と `git merge` を連続的に実行し、ローカルブランチを更新します。 | `git pull` |
+ `git chekout origin <branch_name>` | ワーキングツリーを、リモートリポジトリのブランチの最新の状態にします。 | `git pull` |
+
+
+仮想環境を作る
+python -m venv venv
+
+仮想環境に「入る」(*):
+windows の場合 venv\Scripts\Activate
+
+仮想環境を「抜ける」:
+deactivate
+
+※外部ライブラリーを使用しない時は仮想環境を作成する必要は原則ない
+
+インストールされているライブラリのリストを出力する
+pip freeze -l
+
+新たにライブラリをインストールする(バージョンを指定しない場合)
+pip install [[library_name]]
+
+インストール済のライブラリをアンインストールする
+pip uninstall [[library_name]]
+
+仮想環境に入った状態のターミナルを開くことができます(*)
+コマンドは、 [Alt] + [F12] (たぶん)
+
+[Shift] [Shift] から何でも検索可能
+
+PYCHARMショ-トカット
+
+ALT+SHIFT+F10 実行
+ALT+SHIFT+F9 デバック実行(止めた後にf8でひとつずつ実行)
+Ctrl+/ 複数行コメントアウト・コメントアウト解除
+
+
+None型というものがある(何も入っていない)
+
+変数を調べるのは右クリック後にalt+f8
+変数に型宣言は不要
+変数は小文字がお作法
+
+pytonのスラッシュは\マーク
+
+"""もコメントの意味
+
+PycharmのフォルダみたいなところからNewを選択するとPythonファイルが追加出来る
+
+VBAのfor nextのnextがない替わりにpythonはインデントでどこまでforが続いているか判定している
+
+f文字列
+    以下のような書き方で、文字列内に変数の値を簡単に挿入できる
+        f'文字列' または f"文字列"
+# f文字列では、{}内の値の型は気にしなくてよい(強制的に文字列として扱われる)
+
+# 切り出しは slice で行います(先頭の要素のインデックスが 0 だということに注意！)
+print(my_str[:3])  # 先頭0文字目から2文字目までを取りだす。
+print(my_str[3:])  # 3文字目以降を取りだす。
+print(my_str[3:7])  # 3文字目以降6文字目までを取りだす。
+
+演算子
+    x == y     : x と y は等しい　              (*1)
+    x != y     : x と y は等しくない            (*2)
+
+    x is y     : x と y は同じオブジェクト　     (*3)
+    x is not y : x と y は同じオブジェクトでない　(*3)
+
+    (*2) not x == y のほうが個人的には好み (後述*4) の書き方
+    (*3) pythonにおける「オブジェクト」とは何ぞやということについての説明はかなり先になります
+
+    not x      : x を満たさない (*4)
+
+fish_dict = dict(karei=15, katsuo=25, fugu=100, )
+print(type(fish_dict))
+print(fish_dict)
+
+※タプルは「静的配列」リストは「動的配列」辞書は「コレクション」メソッド。
+	→コレクションは実践であまり使ったことはないが、プロパティを大量に持つPythonでは必要な技術
+	Excelの表のデータはPythonでは辞書の形で持つ
+	辞書がkey一つに対して要素一つなのは使わないからか
+
+ctrl + B でメソッドの中に入れる
+
+Django/Python の例外と出現の具体例
+https://forum.pc5bai.com/tips/python_exceptions/
+
+ここに.を入れてしまう悪い癖
+ws = wb["Mondai1"]
+
+https://1studying.blogspot.com/2017/04/blog-post.html
+
+最新
+# ファイルinput/telephone.csvの内容を表示しましょう。
+with open('input/telephone.csv', encoding='utf-8') as f:
+    for row in f:
+        # 末尾の改行を削除        
+        str_row = row.rstrip()
+        print(str_row)
+
+
+sample = 'a,b,c,d,e'
+sample_list = sample.split(',')
+print(sample_list)
+
+num_string = '100 200 300 400 500'
+nums = num_string.split(' ')
+for x in nums:
+    print(x)
+
+with open('input/menu.csv', encoding='utf-8') as f:
+    for row in f:
+        row_string = row.rstrip()
+        colums = row_string.split(',')
+        name = colums[0]
+        price = colums[1]
+        print(name + 'は' + price + '円')
+
+with open('input/lunch.csv', encoding='utf-8') as f:
+    for row in f:
+        row_string = row.rstrip()
+        colums = row_string.split(',')
+        name = colums[0]
+        lunch = colums[1]
+        
+        if lunch == 'コロッケ弁当':
+            print(name)
+
+book_user = []
+
+#2020/9/29課題に出た
+with open('input/room.csv', encoding='utf-8') as f:
+    for row in f:
+        colums = row.rstrip().split(',')
+        room = colums[0]
+        name = colums[1]
+
+        if room == '会議室A':
+            if name not in book_user:
+                book_user.append(name)
+    
+# 表示
+print(book_user)
+
+#書き込み
+with open ('output/output.txt', 'w', encoding='utf-8' ) as f:
+    f.write('hello, world\n')
+print('書き込み完了')
+
+ファイルを開くときに指定するモードには以下の種類があります。
+
+r: 読み込み専用。省略可能。
+w: 書き込みするときに指定。ファイルが存在しない場合、新しいファイルが作られる。
+x: ファイルが存在しない場合のみ、ファイルを作成し、書き込む。ファイルが存在する場合は何もしない。
+a: 末尾に書き込み。ファイルが存在しない場合はファイルを作成し、書き込む。
+
+#リストを書き込む
+
+with open ('output/trash.txt', 'w', encoding='utf-8' ) as f:
+    for item in week_duty:
+        f.write(item + '\n')
+        
+＃リストの書き込み    
+
+stationery = {'ボールペン': 22,
+              'ノート': 31,
+              'のり': 8,
+              'セロハンテープ': 24,
+              'ホッチキス': 7
+              }
+with open ('output/stationery.txt', 'w', encoding='utf-8' ) as f:
+    for key, value in stationery.items():
+        f.write(key + 'は' + str(value))
+        f.write('\n')
+
+
+追加書き込み
+with open ('output/work.log', 'a', encoding='utf-8') as f:
+           f.write(str_now + ' - 出勤\n')
+
+print('書き込み完了')
+
+#ファイルを開いて、必要な要素を抜き出し書き込み
+
+output_rows = []
+
+with open('input/books.csv', encoding='utf-8') as f:
+    for row in f:
+        colums = row.strip().split(',')
+        #print(colums[2])
+        purpose = colums[2]
+
+        if purpose == 'Python-勉強会':
+            output_rows.append(row)
+            #print(output_rows)
+
+#書き込み
+with open ('output/book_python.csv', 'w', encoding='utf-8' ) as wf:
+        for row in output_rows:
+            wf.write(row)
+
+#現在の時刻を取る
+
+from datetime import datetime
+
+now = datetime.now()
+print(now)
+
+#年日月を取る
+
+from datetime import datetime
+
+now = datetime.now()
+
+print(now.year, '年')
+print(now.month, '月')
+print(now.day, '日')
+print(now.hour, '時')
+print(now.minute, '分')
+print(now.second, '秒')
+
+
+#日付を作る
+from datetime import datetime
+
+one_day = datetime(2016, 1, 31)
+print(one_day)
+
+⇒2016-01-31 00:00:00
+
+one_datetime = datetime(2016, 5, 5, 14, 15, 30)
+
+⇒2016-05-05 14:15:30
+
+＃年月日の文字列を表示
+Python3.8からは、f'{式 =}' という記述で、式そのものも出力できるようになりました。書式を指定する場合は、f'{式 = :書式}'のようにします
+
+%Y: 西暦（4桁）の10進表記を表します。
+%m: 0埋めした10進数で表記した月。
+%d: 0埋めした10進数で表記した月中の日にち。
+%H: 0埋めした10進数で表記した時 (24時間表記）。
+%M: 0埋めした10進数で表記した分。
+%S: 0埋めした10進数で表記した秒。
+
+※mは大文字と小文字で異なる
+
+from datetime import datetime
+
+one_day = datetime(2016, 8, 11)
+
+str_one_day = f'{one_day = :%Y/%m/%d}'
+print(str_one_day)
+
+from datetime import datetime
+
+str_date = '2016年12月31日'
+one_date = datetime.strptime(str_date, '%Y年%m月%d日')
+print(one_date)
+
+from datetime import datetime
+
+str_day = '2016/01/15 09:15:31'
+one_day = datetime.strptime(str_day, '%Y/%m/%d %H:%M:%S')
+print(one_day)
+
+from datetime import datetime
+
+str_day = '1600/10/21'
+one_day = datetime.strptime(str_day, '%Y/%m/%d')
+print(one_day)
+
+from datetime import datetime
+
+str_date = '2016年1月5日7時1分33秒'
+one_date = datetime.strptime(str_date, '%Y年%m月%d日%H時%M分%S秒')
+print(one_date)
+
+from datetime import datetime
+from datetime import timedelta⇒日付の調整
+
+olympic_day = datetime(2020, 7, 24)
+before_2days = olympic_day - timedelta(days=2)
+# 表示
+print(before_2days.date())
+
+from datetime import datetime
+from datetime import timedelta
+#日付変更
+# 指定日
+str_date = '2016-10-20'
+
+# 日付へ変換
+base_date = datetime.strptime(str_date, '%Y-%m-%d')
+# 5日前
+before_5days = base_date - timedelta(days=5)
+# 文字列に変換
+print_date = f'{before_5days:%Y-%m-%d}'
+# 表示
+print(print_date)
+
+
+ファイルの日付を読んで文字列日付型に変換
+
+from datetime import datetime
+
+with open('input/days.txt', encoding='utf-8') as f:
+    for row in f:
+        str_row = row.rstrip()
+        base_date = datetime.strptime(str_row, '%Y-%m-%d')
+        print_date = f'{base_date:%Y/%m/%d}'
+        print(print_date)
+
+from datetime import datetime
+from datetime import timedelta
+
+# 基準の日付
+str_date = '2016-10-20'
+# 文字列を日付へ変換
+base_day = datetime.strptime(str_date, '%Y-%m-%d')
+# 5日前の日付
+before_5days = base_day - timedelta(days=5)
+# ファイルinput/days.txtを開く
+with open('input/days.txt', encoding='utf-8') as f:
+    for row in f:
+        # 文字列を日付へ変換
+        base_date = datetime.strptime(row.rstrip(), '%Y-%m-%d')
+        # 日付を比較
+        if before_5days <= base_date < base_day:
+            print(f'{base_date:%Y/%m/%d}')
+
+#1ずつ足す、１ずつ引く
+x = 10
+y = 10
+
+# xを1増加、ｙを1減少させましょう。
+x += 1
+y -= 1
+print('x =', x)
+print('y =', y)
+
+# 集計用辞書
+stationery_dict = {'ボールペン': 0,
+                   'ノート': 0,
+                   'のり': 0}
+
+# 各値を1増加
+stationery_dict['ボールペン'] += 1
+stationery_dict['ノート'] += 1
+stationery_dict['のり'] += 1
+# 表示
+print(stationery_dict)
+
+#リストの値の集計
+# 利用状況
+
+used = ['ボールペン', 'ノート', 'のり', 'のり', 'ノート']
+
+# 集計用辞書
+stationery_dict = {'ボールペン': 0,
+                   'ノート': 0,
+                   'のり': 0}
+
+# 各文房具の利用回数の計算
+for item in used:
+    stationery_dict[item] += 1
+# 結果の表示
+print(stationery_dict)
+
+#ネストを学ぶ
+# リストfruits作成
+fruits = ['もも', 'ばなな', 'りんご', 'なし', 'すいか']
+
+for fruit in fruits:
+    if len(fruit) == 2:
+        print(fruit)
+
+#リストに存在すれば表示
+
+# 辞書fruits作成
+fruits = {'Apple': 'リンゴ', 'Orange': 'ミカン', 'Grapes': 'ブドウ'}
+
+# 確認用リスト
+check_list = ['Apple', 'Peach', 'Grapes']
+
+for key in check_list:
+    if key in fruits:
+        print(fruits[key] + 'は存在します。')
+
+#リストに存在したらカウント
+# 利用状況
+used = ['ボールペン', 'ノート', 'のり', 'のり', 'ノート']
+
+# 集計用辞書
+items = {}
+
+# 各文房具の利用回数の計算
+for item in used:
+    if item in items:
+      # キーが存在する場合は、値を1増加させる
+        items[item] += 1
+    else:
+        items[item] = 1
+    
+# 結果の表示
+print(items)
+
+空の辞書を用いると、集計するキーが不明でも、新しく登場したキーを追加することにより、集計できます。
+
+# お昼の注文
+lunch = ['カレー', '唐揚げ', 'うどん',
+         'カレー', 'カレー', '唐揚げ',
+         'カレー', '唐揚げ', 'カレー',
+         'うどん', '唐揚げ', 'うどん']
+
+# 集計用辞書
+count = {}
+
+# 集計
+for item in lunch:
+    if item in count:
+        count[item] += 1
+    else:
+        count[item] = 1
+# 表示
+for k, v in count.items():
+    print(k + ':' + str(v))
+
+
+book = {}  # この行は直さないでください
+
+# ファイルinput/room.csvを開いて、集計
+with open('input/room.csv', encoding='utf-8') as f:
+    for row in f:
+        data = row.rstrip().split(',')
+        room = data[0]
+        #print(room)
+        if room in book:
+            book[room] += 1
+        else:
+            book[room] = 1
+# 表示
+print(book)
+
+# 関数add_oneを定義します
+def add_one(x):
+    return x + 1
+
+# 実行
+result = add_one(1)
+# 表示
+print(result)
+
+＃平均値関数
+
+def mean(data):
+    return sum(data) / len (data)
+
+sample_list = [4, 100, 30, 43, 57, 32, 90, 77]
+
+result = mean(sample_list)
+print(result)
+
+＃よそから関数をもってくる
+
+greeting.pyに書いてあること
+
+def print_morning():
+    print('Morning')
+
+
+def say_hello(name):
+    print('Hello,', name)
+
+引っ張ってきた関数を使う
+
+# 実行
+from greeting import say_hello, print_morning
+
+say_hello('Bob')
+print_morning()
+
+#文字列の記述とエスケープシーケンス
+
+代表的なエスケープシーケンス
+\n: 改行
+\t: タブ
+
+改行
+
+message = """\
+朝、ウォーキング
+昼、腕立て伏せ
+夜、腹筋"""
+
+print(message)
+
+#文字のスライス
+
+message = 'Hello, World'
+
+print(message[0])  # 1番目の文字
+print(message[7:])  # 8文字目から最後まで
+print(message[2:4])  # 3文字目から4文字目まで
+print(message[:5])  # 最初から5文字目まで
+print(message[-1])  # 最後の文字
+print(message[:-3])  # 最初から最後から3文字目の直前まで
+
+#str.format()の構文
+
+print('{}, {}!'.format('Hello', 'World'))
+
+print('{}, {}!'.format('World', 'Hello'))
+
+print('{1}, {0}!'.format('Hello', 'World'))
+
+print('{0}, {1}, {0}!'.format('Hello', 'World'))
+
+#str.format()の構文
+
+card = """\
+株式会社ビープラウド
+{job_title}
+{name}
+MAIL: {mail}
+TEL: 03-9999-9999 FAX: 03-9999-9998 内線: {extension}
+URL: https://www.beproud.jp
+"""
+
+# この下に処理を記述します
+sato_card = card.format(name='佐藤太郎',
+                       job_title='エンジニア',
+                       mail='taro@beproud.jp',
+                       extension='1234')
+
+print(sato_card)
+↓
+株式会社ビープラウド
+エンジニア
+佐藤太郎
+MAIL: taro@beproud.jp
+TEL: 03-9999-9999 FAX: 03-9999-9998 内線: 1234
+URL: https://www.beproud.jp
+
+
+breads = {
+    'アンパン': 200,
+    '食パン': 150,
+    'カレーパン': 300,
+    'メロンパン': 220
+}
+
+
+def main():
+    """メインの処理."""
+    total = 0
+    print('平均価格は{:.1f}円です。')
+    for price in breads.values():
+        total += price
+    print('平均価格は{:.1f}円です。'.format(total / len(breads)))
+
+if __name__ == '__main__':
+    main()
+
+def main():
+    with open('input/zoo.csv', encoding='utf-8') as f:
+        for row in f:
+            columns = row.rstrip().split(',')
+            address = columns[0]
+            name = columns[1]
+            adult_price = int(columns[2])
+            child_price = int(columns[3])
+            if address == '東京' and adult_price == 0 and child_price == 0:
+                print(name)
+if __name__ == '__main__':
+    main()
+
+def main():
+    total = 0
+    with open('input/sales.csv', encoding='utf-8') as f:
+            for row in f:
+                columns = row.rstrip().split(',')
+                month = int(columns[0])
+                sale = int(columns[1]) * 1000
+                if 1 <= month <= 6:
+                    total += sale
+    avg = total / 6
+    print('1月から6月までの月売上の平均は{:,.2f}円です。'.format(avg))
+if __name__ == '__main__':
+    main()
+
+特殊文字
+改行文字は、他のプログラミング言語と同じように、\nを使います。また\tはタブとして使えます。
+
+print('pine')
+print('apple')
+print('pine\napple')
+print("""pine
+apple""")
+
+s = ('pine'
+    'apple')
+print(s)
+
+文字列リテラルは並べるだけで連結されます。また、文字列 * 数とすると、その文字列を数の分、繰り返して連結します。
+
+文字列の連結は、文字列リテラル同士だけ有効です。変数を並べても連結しません。
+たとえば、t = 'I like' sと書くと文法エラー（SyntaxError）になります。
+文字列の入った変数を連結する場合は、+が使えます。
+たとえば、t = 'I like' + sとすれば、文字列が連結できます。
+
++を使ってたくさんの文字列を連結するのは効率が悪いです。
+その場合は、一旦、リストに入れてstr.join(リスト)とします。詳しくは、この後で学びます。
+
+Jupyter Notebook
+
+セルを上に追加　a(avove)
+セルを下に追加　b(bellow)
+コマンドモードにしてからmでマークダウン
+dを2回押せばセルを消せる
+
+マジックコマンド
+
+%や%%で始まるコードをマジックコマンドといいます。
+
+%コマンド：ラインマジックコマンドといいます。1行からなるコマンドです。
+%%コマンド：セルマジックコマンドといいます。1セルからなるコマンドです。
+%matplotlib inline
+グラフ（matplotlib）のインライン描画指定をします。
+引数無しで%matplotlibとすると、別画面への描画指定になりますが、PyQでは無効です。
+
+%quickref
+簡易ヘルプを画面下部に表示します。画面下部の表示は、Escキーまたは、×ボタンで消せます。
+
+%whos
+変数の一覧を表示します。何も変数を作成していなくても、予めいくつか設定されていることもあります。
+
+時間計測
+下記のマジックコマンドで、コードの実行時間を計測できます。非常に便利なので、是非、覚えましょう。
+
+マジックコマンド	対象	実行回数
+%time	行	1回
+%%time	セル	1回
+%timeit	行	複数回
+%%timeit	セル	複数回
+%timeitと%%timeitは、「M回実行したときの平均時間の値」をN回繰り返したときのN個から、平均と標準偏差を出力します。
+デフォルトでは、1回あたりの実行時間に応じて実行回数が変わります。
+-n数字オプションで実行回数（M）を、-r数字オプションで個数（N）を指定できます。
+
+%timeitや%%timeitで実行しても、変数は定義されないので注意しましょう。
+
+pandasによるデータ読み込み
+
+Excel: read_excel
+テキストファイル: read_table
+HTMLのtableタグ: read_html
+JSON: read_json
+リレーショナルデータベース: read_sql
+Google BigQuery: read_gbq
+
+pd
+stationery_counts = df['Name'].value_counts()
+
+全部sumした後に必要な項目だけデータ化
+# 文房具の名前でグループ化した合計金額を表示
+grouped_df = df.groupby(by='Name').sum()
+total_price = grouped_df['Price']
+total_price
+
+# 身長をメートルに変換した列を追加
+df['HeightM'] = df['Height'] / 100
+
+# BMIが25以上の人を表示
+df_filtering = df[df['BMI'] >= 25]
+df_filtering
+
+※論理演算はPythonと違い、andの場合は&、orの場合は|、notの場合は~を利用します
+# BMIが25以上か18.5未満の人を表示
+df_filtering = df[(df['BMI'] >= 25) | (df['BMI'] < 18.5)]
+df_filtering
+
+series = pd.Series(sample_list)
+
+series_1 = series[1]
+
+一次配列の値を調べる
+s_values = series.values
+s_values
+
+一次配列のインデックスを調べる
+s_indexes = series.index.values
+s_indexes
+
+Series（シリーズ）は1次元でしたが、DataFrameは2次元のデータ構造です。
+
+列名の取得
+df_col_val = df.columns
+
+行名の取得
+df_idx_val = df.index
+
+行ラベルでデータ参照(下記は1行目)
+df_loc = df.loc[1]
+df_loc
+
+行ラベルの変更方法は、以下の3通りあります。
+
+df.index = 新しい行ラベルのリスト：新しい行ラベルを設定します。
+df.reset_index(inplace=True)：行ラベルを通し番号に再設定します。元の行ラベルは、indexという名前の列で追加されます。追加したくない場合は、drop=Trueをつけます。
+df.set_index(インデックスにしたい列名, inplace=True)：指定した列を行ラベルに設定し、列から削除します。削除したくない場合は、drop=Falseをつけます。
+
+前の問題で、行ラベルを設定したあとに、 DataFrame.loc[行番号] と指定した場合は以下のようなエラーになりました。
+行番号を指定して行のデータを取得したい場合は、locではなく、ilocを使用します。
+
+列名を指定してcsvを読み込み
+
+df_head = pd.read_csv('dataset/health_check_nohead.csv',
+                      names=['Name', 'Height', 'Weight'])
+
+df['列ラベル'] = 新しいデータのリスト で、既存の列Nameの値を変更できました。
+
+# 列price_per_kgのランクを新しい列 price_rankとして追加
+df['PriceRank'] = df['PricePerKg'].rank()
+
+rankはデフォルトでは昇順（値が小さい順）に並びます。降順（値が大きい順）にする場合はrank(ascending=False)のようにオプションを設定します。
+
+データフレームに条件を付ける
+
+df_165 = df[df['Height'] >= 165]
+df_ans = df[(df['Height'] >= 165) & (df['Weight'] >= 55)]
+
+df.query()は絞り込み条件を文字列で渡せるメソッドです。 複数条件で絞り込む場合に、簡潔に記述できます。
+df.query('Height >= 170 | Weight >=55')
+df.query('Height >= 165 & Name == "佐藤"')
+
+# 変数をquery内で使うなら@を付ける
+target_name = '佐藤'
+df.query('Height >= 165 & Name == @target_name')
+
+#書いたプログラムを実行する
+%run 1.ipynb(1はタイトル名を1としたから)
+
+DataFrame.itertuples()の繰り返しでリストにデータを挿入する
+
+sliced_list = []
+for row in df.itertuples():
+    sliced_list.append(row.Comment[:15])
+df['SlicedComment'] = sliced_list

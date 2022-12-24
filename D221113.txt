@@ -1,0 +1,41 @@
+cd C:\Mypython\Eq_sclayPing
+python EDINET_API_30.py
+
+cd C:\Mypython\sclayPing\sclayPing
+python main_args.py -id 202209060711
+
+cd C:\Mypython\Project\
+mkdir django_5
+
+cd django_5
+
+python -m venv venv
+.\venv\Scripts\activate
+pip install django
+
+django-admin startproject config .
+
+python manage.py runserver
+
+http://127.0.0.1:8000/
+
+runserver を終了する
+以下のコマンドで、 runserver を終了できる。
+[Ctrl] + [C]
+
+python manage.py migrate
+
+python manage.py createsuperuser
+Username (leave blank to use 'xxx'): hutsubo
+Email address: nakajirou@gmail.com
+Password:h25122512
+Password (again):
+Superuser created successfully.
+
+python manage.py runserver
+
+deactivate
+
+http://127.0.0.1:8000/admin/
+
+http://127.0.0.1:8000/admin/
