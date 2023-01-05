@@ -1,8 +1,14 @@
+--コミットをshllで行う
+C:\Mypython\PYTHON
+git status
+git commit -m "20230105 テキストファイル更新"
+git push -u origin <branch_name>
+
 cd C:\Mypython\Eq_sclayPing
 python EDINET_API_30.py
 
 cd C:\Mypython\sclayPing\sclayPing
-python main_args.py -id 202209060711
+python main_args.py -id 202307010111
 
 cd C:\Mypython\Project\
 mkdir django_5

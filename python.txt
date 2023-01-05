@@ -1,3 +1,4 @@
+Pycharm Shift+Alt+F9 実施選択画面
 
 Powershell移動
 C:\Users\hutsu> cd C:\mypython\monthly_report\
@@ -7,6 +8,9 @@ beautifulsoup4
 
  `git init` | 空のリポジトリを作ります。 | `git init` |
  `git status` | 現在の working tree の状態を確認します。 | `git status` |
+
+`git add -A`
+`git commit -m "画像を追加した"`
 
 `git checkout` というコマンドで、ワーキングツリーを、特定のコミットがされたときの状態に戻すことができます。
 引数には、ブランチ名またはハッシュ値を使います。  
