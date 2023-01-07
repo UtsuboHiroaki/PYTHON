@@ -1,8 +1,10 @@
 --コミットをshllで行う
-C:\Mypython\PYTHON
+cd C:\Mypython\PYTHON
 git status
+git add -A
 git commit -m "20230105 テキストファイル更新"
-git push -u origin <branch_name>
+
+git push
 
 cd C:\Mypython\Eq_sclayPing
 python EDINET_API_30.py
