@@ -2,7 +2,7 @@
 cd C:\Mypython\PYTHON
 git status
 git add -A
-git commit -m "20230105 テキストファイル更新"
+git commit -m "20230108 テキストファイル更新"
 
 git push
 
@@ -10,7 +10,7 @@ cd C:\Mypython\Eq_sclayPing
 python EDINET_API_30.py
 
 cd C:\Mypython\sclayPing\sclayPing
-python main_args.py -id 202307010111
+python main_args.py -id 202306010411
 
 cd C:\Mypython\Project\
 mkdir django_5
