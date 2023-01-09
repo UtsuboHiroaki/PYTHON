@@ -2,7 +2,7 @@
 cd C:\Mypython\PYTHON
 git status
 git add -A
-git commit -m "20230108 テキストファイル更新"
+git commit -m "20230109 テキストファイル更新"
 
 git push
 
